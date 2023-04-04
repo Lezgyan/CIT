@@ -1,19 +1,21 @@
 #include <iostream>
 using namespace std;
 
-int fib(int n) {
-	if (n == 0 || n == 1) {
-		return 0;
+void fib(int n) {
+	int d = 0, p = 1;
+	cout << d << endl;
+	cout << p << endl;
+	for (int i = 2; i < n; i++) {
+		cout << d + p << endl;
+		int k = d;
+		d = p;
+		p = k + p;
 	}
-	if (n == 2) {
-		return 1;
-	}
-	return fib(n - 1) + fib(n - 2);
 }
 
 int main() {
 	int n; cin >> n;
-	cout << fib(n);
+	fib(n);
 	system("pause");
 	return 0;
 }
